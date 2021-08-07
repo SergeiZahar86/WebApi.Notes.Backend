@@ -8,7 +8,7 @@ namespace Notes.Application.Notes.Queries.GetNoteDetails
     /// <summary>
     /// Класс для возвращения пользователю по запросу GET. Использующий маппинг
     /// </summary>
-    class NoteDetailsVm : IMapWith<Note>
+    public class NoteDetailsVm : IMapWith<Note>
     {
         public Guid Id { get; set; }
         public string Title { get; set; }

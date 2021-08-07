@@ -26,6 +26,7 @@ namespace Notes.WebApi
             });
             services.AddApplication();
             services.AddPersistence(Configuration);
+            services.AddControllers(); // используем контроллеры без представлений
 
             services.AddCors(option =>
             {
