@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace Notes.Application.Common.Mappings
 {
-    class AssemblyMappingProfile : Profile
+    public class AssemblyMappingProfile : Profile
     {
         public AssemblyMappingProfile(Assembly assembly) =>
             ApplyMappingFromAssembly(assembly);
