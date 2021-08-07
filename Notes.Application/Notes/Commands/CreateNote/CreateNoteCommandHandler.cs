@@ -19,9 +19,7 @@ namespace Notes.Application.Notes.Commands.CreateNote
         /// <summary>
         /// Метод обработки команды
         /// </summary>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
+        /// <returns><see cref="Note.Id"/></returns>
         public async Task<Guid> Handle(CreateNoteCommand request, 
             CancellationToken cancellationToken)
         {

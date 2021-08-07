@@ -20,9 +20,7 @@ namespace Notes.Application.Notes.Commands.UpdateNote
         /// <summary>
         /// Метод обработки команды
         /// </summary>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
+        /// <returns><see cref="Unit.Value"/></returns>
         public async Task<Unit> Handle(UpdateNoteCommand request,
             CancellationToken cancellationToken)
         {

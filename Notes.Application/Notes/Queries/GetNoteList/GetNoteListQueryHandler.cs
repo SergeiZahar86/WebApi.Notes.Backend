@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Notes.Application.Notes.Queries.GetNoteList
 {
     /// <summary>
-    /// Обработчик команды 
+    /// Обработчик запроса 
     /// </summary>
     public class GetNoteListQueryHandler : IRequestHandler<GetNoteListQuery, NoteListVm>
     {
@@ -25,9 +25,7 @@ namespace Notes.Application.Notes.Queries.GetNoteList
         /// <summary>
         /// Метод обработки запроса
         /// </summary>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
+        /// <returns><see cref="NoteListVm"/></returns>
         public async Task<NoteListVm> Handle(GetNoteListQuery request,
             CancellationToken cancellationToken)
         {

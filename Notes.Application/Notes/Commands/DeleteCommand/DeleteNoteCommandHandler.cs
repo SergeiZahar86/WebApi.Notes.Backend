@@ -18,9 +18,8 @@ namespace Notes.Application.Notes.Commands.DeleteCommand
         /// <summary>
         /// Метод обработки команды
         /// </summary>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
+        /// <returns><see cref="Unit.Value"/></returns>
+
         public async Task<Unit> Handle(DeleteNoteCommand request,
             CancellationToken cancellationToken)
         {

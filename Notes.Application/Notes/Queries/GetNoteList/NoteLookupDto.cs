@@ -5,6 +5,10 @@ using System;
 
 namespace Notes.Application.Notes.Queries.GetNoteList
 {
+    /// <summary>
+    /// Класс изменённых заметок через маппинг для возвращения пользователю 
+    /// в составе <see cref="NoteListVm"/>. 
+    /// </summary>
     public class NoteLookupDto : IMapWith<Note>
     {
         public Guid Id { get; set; }
