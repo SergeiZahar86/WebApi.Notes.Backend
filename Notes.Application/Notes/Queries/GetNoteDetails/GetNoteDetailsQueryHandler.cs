@@ -9,12 +9,22 @@ using System.Threading.Tasks;
 
 namespace Notes.Application.Notes.Queries.GetNoteDetails
 {
+    /// <summary>
+    /// Обработчик команды 
+    /// </summary>
     internal class GetNoteDetailsQueryHandler : IRequestHandler<GetNoteDetailsQuery, NoteDetailsVm>
     {
         private readonly INotesDbContext _dbContext;
         private readonly IMapper _mapper;
         public GetNoteDetailsQueryHandler(INotesDbContext dbContext, IMapper mapper) =>
             (_dbContext, _mapper) = (dbContext, mapper);
+
+        /// <summary>
+        /// Метод обработки запроса
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         public async Task<NoteDetailsVm> Handle(GetNoteDetailsQuery request, CancellationToken cancellationToken)
         {
             var entity = await _dbContext.Notes.FirstOrDefaultAsync(note =>

@@ -7,11 +7,21 @@ using System.Threading.Tasks;
 
 namespace Notes.Application.Notes.Commands.CreateNote
 {
+    /// <summary>
+    /// Обработчик команды 
+    /// </summary>
     public class CreateNoteCommandHandler : IRequestHandler<CreateNoteCommand, Guid>
     {
         private readonly INotesDbContext _dbContext;
         public CreateNoteCommandHandler(INotesDbContext dbContext) =>
             _dbContext = dbContext;
+
+        /// <summary>
+        /// Метод обработки команды
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         public async Task<Guid> Handle(CreateNoteCommand request, 
             CancellationToken cancellationToken)
         {

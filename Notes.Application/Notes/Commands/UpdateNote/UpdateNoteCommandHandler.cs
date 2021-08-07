@@ -8,11 +8,21 @@ using System.Threading.Tasks;
 
 namespace Notes.Application.Notes.Commands.UpdateNote
 {
+    /// <summary>
+    /// Обработчик команды 
+    /// </summary>
     public class UpdateNoteCommandHandler : IRequestHandler<UpdateNoteCommand>
     {
         private readonly INotesDbContext _dbContext;
         public UpdateNoteCommandHandler(INotesDbContext dbContext) =>
             _dbContext = dbContext;
+
+        /// <summary>
+        /// Метод обработки команды
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         public async Task<Unit> Handle(UpdateNoteCommand request,
             CancellationToken cancellationToken)
         {

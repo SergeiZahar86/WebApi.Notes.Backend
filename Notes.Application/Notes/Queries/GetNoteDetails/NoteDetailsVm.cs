@@ -5,6 +5,9 @@ using System;
 
 namespace Notes.Application.Notes.Queries.GetNoteDetails
 {
+    /// <summary>
+    /// Класс для возвращения пользователю по запросу GET. Использующий маппинг
+    /// </summary>
     class NoteDetailsVm : IMapWith<Note>
     {
         public Guid Id { get; set; }
