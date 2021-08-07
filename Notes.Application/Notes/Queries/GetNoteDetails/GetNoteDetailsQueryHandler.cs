@@ -30,7 +30,7 @@ namespace Notes.Application.Notes.Queries.GetNoteDetails
 
             if(entity == null || entity.UserId != request.UserId)
             {
-                throw new NotFoundExeption(nameof(Notes), request.Id);
+                throw new NotFoundException(nameof(Notes), request.Id);
             }
             return _mapper.Map<NoteDetailsVm>(entity);
         }

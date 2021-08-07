@@ -2,9 +2,9 @@
 
 namespace Notes.Application.Common.Exception
 {
-    public class NotFoundExeption : SystemException
+    public class NotFoundException : SystemException
     {
-        public NotFoundExeption(string name, object key)
+        public NotFoundException(string name, object key)
             : base($"Entity \"{name}\" ({key}) not found.") { }
     }
 }

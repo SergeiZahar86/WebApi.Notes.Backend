@@ -29,7 +29,7 @@ namespace Notes.Application.Notes.Commands.UpdateNote
 
             if(entity == null || entity.UserId != request.UserId)
             {
-                throw new NotFoundExeption(nameof(Notes), request.Id);
+                throw new NotFoundException(nameof(Notes), request.Id);
             }
 
             entity.Details = request.Details;

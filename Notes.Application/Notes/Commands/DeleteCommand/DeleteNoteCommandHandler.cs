@@ -27,7 +27,7 @@ namespace Notes.Application.Notes.Commands.DeleteCommand
 
             if (entity == null || entity.UserId != request.UserId)
             {
-                throw new NotFoundExeption(nameof(Notes), request.Id);
+                throw new NotFoundException(nameof(Notes), request.Id);
             }
 
             _dbContext.Notes.Remove(entity);
