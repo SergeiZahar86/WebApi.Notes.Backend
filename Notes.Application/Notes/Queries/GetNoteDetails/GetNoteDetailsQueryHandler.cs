@@ -12,7 +12,7 @@ namespace Notes.Application.Notes.Queries.GetNoteDetails
     /// <summary>
     /// Обработчик запроса 
     /// </summary>
-    internal class GetNoteDetailsQueryHandler : IRequestHandler<GetNoteDetailsQuery, NoteDetailsVm>
+    public class GetNoteDetailsQueryHandler : IRequestHandler<GetNoteDetailsQuery, NoteDetailsVm>
     {
         private readonly INotesDbContext _dbContext;
         private readonly IMapper _mapper;
