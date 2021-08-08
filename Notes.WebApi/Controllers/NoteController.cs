@@ -13,11 +13,11 @@ using System.Threading.Tasks;
 
 namespace Notes.WebApi.Controllers
 {
-    //[ApiVersion("1.0")]
-    //[ApiVersion("2.0")]
+    [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
     [Produces("application/json")]
-    //[Route("api/{version:apiVersion}/[controller]")]
-    [Route("api/[controller]")]
+    [Route("api/{version:apiVersion}/[controller]")]
+    //[Route("api/[controller]")]
     public class NoteController : BaseController
     {
         private readonly IMapper _mapper;
