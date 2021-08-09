@@ -79,7 +79,7 @@ namespace Notes.WebApi
             app.UseSwagger();
             app.UseSwaggerUI(config =>
             {
-                foreach (var description in provider.ApiVersionDescriptions)
+                foreach (ApiVersionDescription description in provider.ApiVersionDescriptions)
                 {
                     config.SwaggerEndpoint(
                         $"/swagger/{description.GroupName}/swagger.json",

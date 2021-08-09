@@ -9,7 +9,7 @@ namespace Notes.Application
     public static class DependencyInjection
     {
         /// <summary>
-        /// Регистрация медиатора (из NuGet - MediatR.Extensions.Microsoft.DependencyInjection). 
+        /// Регистрация медиатора и валидации. 
         /// Для этого вызывается 
         /// <value><see cref="ServiceCollectionExtensions.AddMediatR"/></value>
         /// и передается ему выполняемая сборка
