@@ -12,8 +12,10 @@ namespace Notes.WebApi.Middleware
     {
         private readonly RequestDelegate _next;
 
-        public CustomExceptionHandlerMiddleware(RequestDelegate next) =>
+        public CustomExceptionHandlerMiddleware(RequestDelegate next)
+        {
             _next = next;
+        }
 
         public async Task Invoke(HttpContext context)
         {
@@ -46,7 +48,7 @@ namespace Notes.WebApi.Middleware
 
             if (result == string.Empty)
             {
-                result = JsonSerializer.Serialize(new { errpr = exception.Message });
+                result = JsonSerializer.Serialize(new {error = exception.Message });
             }
 
             return context.Response.WriteAsync(result);
