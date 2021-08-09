@@ -21,7 +21,10 @@ namespace Motes.Persistence
             {
                 options.UseSqlite(connectionString);
             });
-            services.AddScoped<INotesDbContext>(provider => provider.GetService<NotesDbContext>());
+            services.AddScoped<INotesDbContext>(provider =>
+            {
+                return provider.GetService<NotesDbContext>();
+            });
             return services;
         }
     }

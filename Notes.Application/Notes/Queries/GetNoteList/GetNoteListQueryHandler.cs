@@ -31,6 +31,7 @@ namespace Notes.Application.Notes.Queries.GetNoteList
         {
             var notesQuery = await _dbContext.Notes
                 .Where(note => note.UserId == request.UserId)
+                // преобразуем полученную коллекцию  в коллекцию NoteLookupDto
                 .ProjectTo<NoteLookupDto>(_mapper.ConfigurationProvider)
                 .ToListAsync(cancellationToken);
 

@@ -16,8 +16,10 @@ namespace Notes.Application.Notes.Queries.GetNoteDetails
     {
         private readonly INotesDbContext _dbContext;
         private readonly IMapper _mapper;
-        public GetNoteDetailsQueryHandler(INotesDbContext dbContext, IMapper mapper) =>
+        public GetNoteDetailsQueryHandler(INotesDbContext dbContext, IMapper mapper)
+        {
             (_dbContext, _mapper) = (dbContext, mapper);
+        }
 
         /// <summary>
         /// Метод обработки запроса
