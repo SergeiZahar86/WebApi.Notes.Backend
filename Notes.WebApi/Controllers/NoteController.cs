@@ -70,7 +70,7 @@ namespace Notes.WebApi.Controllers
                 UserId = UserIdBase,
                 Id = id
             };
-            var vm = await Mediator.Send(query);
+            NoteDetailsVm vm = await Mediator.Send(query);
             return Ok(vm);
         }
 
@@ -97,7 +97,7 @@ namespace Notes.WebApi.Controllers
         {
             CreateNoteCommand command = _mapper.Map<CreateNoteCommand>(createNoteDto);
             command.UserId = UserIdBase;
-            var noteId = await Mediator.Send(command);
+            Guid noteId = await Mediator.Send(command);
             return Ok(noteId);
         }
 

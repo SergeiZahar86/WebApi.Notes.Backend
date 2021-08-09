@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Notes.Application.Common.Exception;
 using Notes.Application.Interfaces;
+using Notes.Domain;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -14,8 +15,10 @@ namespace Notes.Application.Notes.Commands.UpdateNote
     public class UpdateNoteCommandHandler : IRequestHandler<UpdateNoteCommand>
     {
         private readonly INotesDbContext _dbContext;
-        public UpdateNoteCommandHandler(INotesDbContext dbContext) =>
+        public UpdateNoteCommandHandler(INotesDbContext dbContext)
+        {
             _dbContext = dbContext;
+        }
 
         /// <summary>
         /// Метод обработки команды
@@ -24,7 +27,7 @@ namespace Notes.Application.Notes.Commands.UpdateNote
         public async Task<Unit> Handle(UpdateNoteCommand request,
             CancellationToken cancellationToken)
         {
-            var entity = await _dbContext.Notes.FirstOrDefaultAsync(note =>
+            Note entity = await _dbContext.Notes.FirstOrDefaultAsync(note =>
             note.Id == request.Id, cancellationToken);
 
             if(entity == null || entity.UserId != request.UserId)
