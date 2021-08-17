@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Notes.Application.Notes.Commands.CreateNote;
@@ -18,7 +19,7 @@ namespace Notes.Tests.Notes.Commands
             var noteDetails = "note details";
 
             // Act
-            var noteId = await handler.Handle(
+            Guid noteId = await handler.Handle(
                 new CreateNoteCommand
                 {
                     Title = noteName,
