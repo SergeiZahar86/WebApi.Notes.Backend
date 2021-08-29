@@ -22,7 +22,10 @@ namespace Notes.WebApi.Controllers
     {
         private readonly IMapper _mapper;
 
-        public NoteController(IMapper mapper) => _mapper = mapper;
+        public NoteController(IMapper mapper)
+        {
+            _mapper = mapper;
+        }
 
         /// <summary>
         /// Gets the list of notes
@@ -34,6 +37,7 @@ namespace Notes.WebApi.Controllers
         /// <returns>Returns NoteListVm</returns>
         /// <response code="200">Success</response>
         /// <response code="401">If the user is unauthorized</response>
+        [ApiVersion("1.0")]
         [HttpGet]
         [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
